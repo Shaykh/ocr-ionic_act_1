@@ -1,3 +1,5 @@
+import { LendCdPage } from './../pages/cds/lendcd/lendcd';
+import { CdListPage } from './../pages/cds/cdList/cdlist';
 import { LendBookPage } from './../pages/books/lendbook/lendbook';
 import { TabsPage } from './../pages/tabs/tabs';
 import { BrowserModule } from '@angular/platform-browser';
@@ -16,7 +18,9 @@ import { BookListPage } from '../pages/books/booklist/booklist';
     HomePage,
     TabsPage,
     BookListPage,
-    LendBookPage
+    LendBookPage,
+    CdListPage,
+    LendCdPage
   ],
   imports: [
     BrowserModule,
@@ -28,6 +32,8 @@ import { BookListPage } from '../pages/books/booklist/booklist';
     HomePage,
     TabsPage,
     BookListPage,
+    LendBookPage,
+    CdListPage,
     LendBookPage
   ],
   providers: [

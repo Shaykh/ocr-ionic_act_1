@@ -1,3 +1,5 @@
+import { CdListPage } from './../cds/cdList/cdlist';
+import { BookListPage } from './../books/booklist/booklist';
 import { Component } from "@angular/core";
 
 @Component({
@@ -5,6 +7,6 @@ import { Component } from "@angular/core";
     templateUrl: 'tabs.html'
 })
 export class TabsPage {
-    cdListPage: any;
-    bookListPage: any;
+    cdListPage = CdListPage;
+    bookListPage = BookListPage;
 }

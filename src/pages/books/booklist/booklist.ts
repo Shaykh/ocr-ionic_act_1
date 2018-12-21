@@ -17,7 +17,7 @@ export class BookListPage {
         private bookService: BookService) {
     }
 
-    ionViewWillEnter(){
+    ionViewWillEnter() {
         this.books = this.bookService.bookList.slice();
     }
 
