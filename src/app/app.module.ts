@@ -1,3 +1,4 @@
+import { LendBookPage } from './../pages/books/lendbook/lendbook';
 import { TabsPage } from './../pages/tabs/tabs';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -14,7 +15,8 @@ import { BookListPage } from '../pages/books/booklist/booklist';
     MyApp,
     HomePage,
     TabsPage,
-    BookListPage
+    BookListPage,
+    LendBookPage
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,8 @@ import { BookListPage } from '../pages/books/booklist/booklist';
     MyApp,
     HomePage,
     TabsPage,
-    BookListPage
+    BookListPage,
+    LendBookPage
   ],
   providers: [
     StatusBar,
