@@ -1,0 +1,19 @@
+<ion-header>
+    <ion-navbar>
+        <ion-buttons>
+            <button ion-button icon-only (click)="onToggleMenu()">
+                <ion-icon name="menu"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <button ion-item
+        icon-end
+        *ngFor="let book of books; let i = index"
+        (click)="onShowBook(i)">
+        <b>{{ book.title }}</b> - {{ book.author }}
+        <ion-icon name="book"></ion-icon>
+    </button>
+</ion-content>
