@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-card [ngClass]="{'is-on': book.isLent, 'is-off': !appareil.isLent }">
+    <ion-card [ngClass]="{'is-on': book.isLent, 'is-off': !book.isLent }">
         <ion-card-header>
             {{ book.title }}
         </ion-card-header>
@@ -20,7 +20,7 @@
     <ion-grid>
         <ion-row>
             <ion-col>
-                <button ion-button (click)="onToggleLend()" full [disabled]="!book.isLent" color="danger">Prêter</button>
+                <button ion-button (click)="onToggleLend()" full [disabled]="!book.isLent" color="primary">Prêter</button>
             </ion-col>
             <ion-col>
                 <button ion-button (click)="onToggleLend()" full [disabled]="book.isLent" color="secondary">Rendre</button>

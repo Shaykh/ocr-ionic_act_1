@@ -1,0 +1,19 @@
+<ion-header>
+    <ion-navbar>
+        <ion-buttons>
+            <button ion-button icon-only (click)="onToggleMenu()">
+                <ion-icon name="menu"></ion-icon>   
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <button ion-item
+        icon-end
+        *ngFor="let cd of cds; let i = index"
+        (click)="onShowCd(i)">
+        <b>{{ cd.title }}</b> - {{ cd.artist }}
+        <ion-icon name="disc"></ion-icon>
+    </button>
+</ion-content>

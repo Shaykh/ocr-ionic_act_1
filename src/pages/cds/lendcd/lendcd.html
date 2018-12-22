@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-navbar>
+        <ion-buttons>
+            <button ion-button clear (click)="onDismissModal()">Fermer</button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card [ngClass]="{'is-on': cd.isLent, 'is-off': !cd.isLent }">
+        <ion-card-header>
+            {{ cd.title }}
+        </ion-card-header>
+        <ion-card-content>
+            <h2>{{ cd.title }}</h2>
+            <h3>{{ cd.artist }}</h3>
+            <p *ngFor="let line of cd.description">{{ line }}</p>
+        </ion-card-content>
+    </ion-card>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <button ion-button 
+                    full
+                    [disabled]="!cd.isLent"
+                    color="primary"
+                    (click)="onToggleLend()">
+                    Prêter
+                </button>
+                <button ion-button
+                    full
+                    color="secondary"
+                    [disabled]="cd.isLent"
+                    (click)="onToggleLend()">
+                    Rendre
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
