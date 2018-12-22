@@ -10,10 +10,10 @@
 
 <ion-content padding>
     <button ion-item
-        icon-end
+        icon-start
         *ngFor="let book of books; let i = index"
         (click)="onShowBook(i)">
-        <b>{{ book.title }}</b> - {{ book.author }}
         <ion-icon name="book"></ion-icon>
+        <b>{{ book.title }}</b> - {{ book.author }}
     </button>
 </ion-content>

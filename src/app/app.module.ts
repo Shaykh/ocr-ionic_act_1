@@ -1,3 +1,5 @@
+import { CdService } from './../services/CdService';
+import { BookService } from './../services/BookService';
 import { SettingsPage } from './../pages/settings/settings';
 import { LendCdPage } from './../pages/cds/lendcd/lendcd';
 import { CdListPage } from './../pages/cds/cdList/cdlist';
@@ -40,6 +42,8 @@ import { BookListPage } from '../pages/books/booklist/booklist';
     SettingsPage
   ],
   providers: [
+    BookService,
+    CdService,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
