@@ -7,31 +7,27 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-card [ngClass]="{'is-on': cd.isLent, 'is-off': !cd.isLent }">
+    <ion-card [ngClass]="{'is-on': !cd.isLent, 'is-off': cd.isLent }">
         <ion-card-header>
             {{ cd.title }}
         </ion-card-header>
         <ion-card-content>
-            <h2>{{ cd.title }}</h2>
             <h3>{{ cd.artist }}</h3>
             <p *ngFor="let line of cd.description">{{ line }}</p>
+            <br />
+            <h4 *ngIf="cd.isLent">Cd prêté</h4>
+            <h4 *ngIf="!cd.isLent">Cd non prêté</h4>
         </ion-card-content>
     </ion-card>
     <ion-grid>
         <ion-row>
             <ion-col>
-                <button ion-button 
-                    full
-                    [disabled]="!cd.isLent"
-                    color="primary"
-                    (click)="onToggleLend()">
+                <button ion-button full [disabled]="cd.isLent" color="unavailable" (click)="onToggleLend()">
                     Prêter
                 </button>
-                <button ion-button
-                    full
-                    color="secondary"
-                    [disabled]="cd.isLent"
-                    (click)="onToggleLend()">
+            </ion-col>
+            <ion-col>
+                <button ion-button full color="available" [disabled]="!cd.isLent" (click)="onToggleLend()">
                     Rendre
                 </button>
             </ion-col>

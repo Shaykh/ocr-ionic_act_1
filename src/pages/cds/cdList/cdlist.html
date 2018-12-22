@@ -10,10 +10,10 @@
 
 <ion-content padding>
     <button ion-item
-        icon-end
+        icon-start
         *ngFor="let cd of cds; let i = index"
         (click)="onShowCd(i)">
-        <b>{{ cd.title }}</b> - {{ cd.artist }}
-        <ion-icon name="disc"></ion-icon>
+        <ion-icon name="disc" [color]="cd.isLent ? 'unavailable' : 'available'"></ion-icon>
+        <b>{{ cd.title }}</b> <br /> {{ cd.artist }}
     </button>
 </ion-content>
