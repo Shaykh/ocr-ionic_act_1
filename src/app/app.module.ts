@@ -1,3 +1,4 @@
+import { SettingsPage } from './../pages/settings/settings';
 import { LendCdPage } from './../pages/cds/lendcd/lendcd';
 import { CdListPage } from './../pages/cds/cdList/cdlist';
 import { LendBookPage } from './../pages/books/lendbook/lendbook';
@@ -20,7 +21,8 @@ import { BookListPage } from '../pages/books/booklist/booklist';
     BookListPage,
     LendBookPage,
     CdListPage,
-    LendCdPage
+    LendCdPage,
+    SettingsPage
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,8 @@ import { BookListPage } from '../pages/books/booklist/booklist';
     BookListPage,
     LendBookPage,
     CdListPage,
-    LendBookPage
+    LendBookPage,
+    SettingsPage
   ],
   providers: [
     StatusBar,
