@@ -15,8 +15,9 @@
     <button ion-item
         icon-start
         *ngFor="let book of books; let i = index"
+        [color]="book.isLent ? 'unavailable' : 'available-list'"
         (click)="onShowBook(i)">
-        <ion-icon name="book" [color]="book.isLent ? 'unavailable' : 'available'"></ion-icon>
+        <ion-icon name="book"></ion-icon>
         <b>{{ book.title }}</b> <br /> {{ book.author }}
     </button>
 </ion-content>
