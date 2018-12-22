@@ -1,5 +1,5 @@
 import { LendCdPage } from './../lendcd/lendcd';
-import { CdService } from './../../../services/CdService';
+import { DonneesService } from './../../../services/donneesService';
 import { ModalController } from 'ionic-angular';
 import { MenuController } from 'ionic-angular';
 import { Cd } from './../../../app/models/Cd';
@@ -14,10 +14,10 @@ export class CdListPage {
 
     constructor(private menuCtrl: MenuController,
         private modalCtrl: ModalController,
-        private cdService: CdService) {}
+        private donneesService: DonneesService) {}
 
     ionViewWillEnter() {
-        this.cds = this.cdService.CdList.slice();
+        this.cds = this.donneesService.CdList.slice();
     }
 
     onToggleMenu() {

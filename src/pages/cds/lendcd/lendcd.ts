@@ -1,4 +1,4 @@
-import { CdService } from './../../../services/CdService';
+import { DonneesService } from './../../../services/donneesService';
 import { NavParams, ViewController } from 'ionic-angular';
 import { Cd } from './../../../app/models/Cd';
 import { Component, OnInit } from "@angular/core";
@@ -13,11 +13,11 @@ export class LendCdPage implements OnInit {
 
     constructor(public navParams: NavParams,
         private viewCtrl: ViewController,
-        private cdService: CdService) {}
+        private donneesService: DonneesService) {}
     
     ngOnInit() {
         this.index = this.navParams.get('index');
-        this.cd = this.cdService.CdList[this.index];
+        this.cd = this.donneesService.CdList[this.index];
     }
 
     onDismissModal() {

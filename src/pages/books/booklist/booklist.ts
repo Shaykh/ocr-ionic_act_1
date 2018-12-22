@@ -1,5 +1,5 @@
 import { Book } from './../../../app/models/Book';
-import { BookService } from './../../../services/BookService';
+import { DonneesService } from './../../../services/donneesService';
 import { Component } from "@angular/core";
 import { MenuController, ModalController } from "ionic-angular";
 import { LendBookPage } from '../lendbook/lendbook';
@@ -14,11 +14,11 @@ export class BookListPage {
 
     constructor(private menuCtrl: MenuController,
         private modalCtrl: ModalController,
-        private bookService: BookService) {
+        private donneesService: DonneesService) {
     }
 
     ionViewWillEnter() {
-        this.books = this.bookService.bookList.slice();
+        this.books = this.donneesService.bookList.slice();
     }
 
     onToggleMenu() {

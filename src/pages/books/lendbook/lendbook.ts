@@ -1,4 +1,4 @@
-import { BookService } from './../../../services/BookService';
+import { DonneesService } from './../../../services/donneesService';
 import { Book } from './../../../app/models/Book';
 import { Component, OnInit } from "@angular/core";
 import { NavParams, ViewController } from 'ionic-angular';
@@ -14,12 +14,12 @@ export class LendBookPage implements OnInit {
 
     constructor(public navParams: NavParams,
         private viewCtrl: ViewController,
-        private bookService: BookService) {
+        private donneesService: DonneesService) {
     }
 
     ngOnInit(): void {
         this.index = this.navParams.get('index');
-        this.book = this.bookService.bookList[this.index];
+        this.book = this.donneesService.bookList[this.index];
     }
 
     onDismissModal() {
