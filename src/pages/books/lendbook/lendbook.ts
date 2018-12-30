@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { NavParams, ViewController } from 'ionic-angular';
 import { Book } from './../../../app/models/Book';
+import { Borrower } from './../../../app/models/Borrower';
 import { DonneesService } from './../../../services/donneesService';
 
 @Component({
@@ -31,7 +33,7 @@ export class LendBookPage implements OnInit {
     }
 
     onSubmitForm() {
-        
+
         this.onDismissModal();
     }
 }

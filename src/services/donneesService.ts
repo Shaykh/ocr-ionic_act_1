@@ -1,7 +1,15 @@
+import { Subject } from 'rxjs/Subject';
+import * as firebase from 'firebase';
+import DataSnapshot = firebase.database.DataSnapshot;
 import { Book } from './../app/models/Book';
 import { Cd } from './../app/models/Cd';
+import { Borrower } from './../app/models/Borrower';
 
 export class DonneesService {
+
+    books$ = new Subject<Book[]>();
+    cds$ = new Subject<Cd[]>();
+
     bookList: Book[] = [
         { 
             title: 'Les Trois Mousquetaires',
@@ -129,4 +137,78 @@ export class DonneesService {
             isLent: false
         }
     ];
+
+    emitBooks() {
+        this.books$.next(this.bookList.slice());
+    }
+
+    emitCds() {
+        this.cds$.next(this.CdList.slice());
+    }
+
+    lendBook(book: Book, borrower: Borrower) {
+        book.borrower = borrower;
+        this.emitBooks();
+    }
+
+    lendCd(cd: Cd, borrower: Borrower) {
+        cd.borrower = borrower;
+        this.emitCds();
+    }
+
+    saveBooksToFirebase() {
+        return new Promise((resolve, reject) => {
+            firebase.database().ref('books').set(this.bookList).then(
+                (data: DataSnapshot) => {
+                    resolve(data);
+                },
+                (error) => {
+                    reject(error);
+                }
+            );
+        });
+    }
+
+    saveCdsToFirebase() {
+        return new Promise((resolve, reject) => {
+            firebase.database().ref('cds').set(this.CdList).then(
+                (data: DataSnapshot) => {
+                    resolve(data);
+                },
+                (error) => {
+                    reject(error);
+                }
+            );
+        });
+    }
+
+    retrieveBooksFromFirebase() {
+        return new Promise((resolve, reject) => {
+            firebase.database().ref('books').once('value').then(
+                (data: DataSnapshot) => {
+                    this.bookList = data.val();
+                    this.emitBooks();
+                    resolve('Données des Livres récupérées avec succès!');
+                },
+                (error) => {
+                    reject(error);
+                }
+            );
+        });
+    }
+
+    retrieveCdsFromFirebase() {
+        return new Promise((resolve, reject) => {
+            firebase.database().ref('cds').once('value').then(
+                (data: DataSnapshot) => {
+                    this.CdList = data.val();
+                    this.emitCds();
+                    resolve('Données des Cd récupérées avec succès!')
+                },
+                (error) => {
+                    reject(error);
+                }
+            );
+        });
+    }
 }
