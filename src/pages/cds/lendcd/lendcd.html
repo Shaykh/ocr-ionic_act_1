@@ -43,6 +43,6 @@
                 <ion-input formControlName="name"></ion-input>
             </ion-item>
         </ion-list>
-        <button ion-button full (click)="onSubmitForm()">Enregistrer</button>
+        <button ion-button full [disabled]="borrowForm.invalid" (click)="onSubmitForm()">Enregistrer</button>
     </form>
 </ion-content>
