@@ -14,6 +14,7 @@ import { LendBookPage } from './../pages/books/lendbook/lendbook';
 import { TabsPage } from './../pages/tabs/tabs';
 import { HomePage } from '../pages/home/home';
 import { BookListPage } from '../pages/books/booklist/booklist';
+import { AuthPage } from '../pages/auth/auth';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { BookListPage } from '../pages/books/booklist/booklist';
     LendBookPage,
     CdListPage,
     LendCdPage,
-    SettingsPage
+    SettingsPage,
+    AuthPage
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,8 @@ import { BookListPage } from '../pages/books/booklist/booklist';
     LendBookPage,
     CdListPage,
     LendCdPage,
-    SettingsPage
+    SettingsPage,
+    AuthPage
   ],
   providers: [
     DonneesService,
