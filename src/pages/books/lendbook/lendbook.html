@@ -15,7 +15,9 @@
             <h3>{{ book.author }}</h3>
             <p *ngFor="let line of book.description">{{ line }}</p>
             <br />
-            <h4 *ngIf="book.isLent">Livre prêté</h4>
+            <h4 *ngIf="book.isLent">Livre prêté
+                <span *ngIf="book.borrower">&nbsp; à {{ book.borrower.name }}</span>
+            </h4>
             <h4 *ngIf="!book.isLent">Livre non prêté</h4>
         </ion-card-content>
     </ion-card>
@@ -29,4 +31,13 @@
             </ion-col>
         </ion-row>
     </ion-grid>
+    <form [formGroup]="borrowForm" *ngIf="isLending">
+        <ion-list>
+            <ion-item>
+                <ion-label floating>Nom de l'emprunteur</ion-label>
+                <ion-input formControlName="name"></ion-input>
+            </ion-item>
+        </ion-list>
+        <button ion-button full (click)="onSubmitForm()">Enregistrer</button>
+    </form>
 </ion-content>

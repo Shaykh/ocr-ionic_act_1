@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
-import { ModalController } from 'ionic-angular';
-import { MenuController } from 'ionic-angular';
+import { ModalController, MenuController } from 'ionic-angular';
 import { Subscription } from "rxjs/Subscription";
 import { Cd } from './../../../app/models/Cd';
 import { DonneesService } from './../../../services/donneesService';
@@ -28,9 +27,9 @@ export class CdListPage implements OnInit, OnDestroy {
         this.donneesService.fetchCdList();
     }
 
-    // ionViewWillEnter() {
-    //     this.cds = this.donneesService.CdList.slice();
-    // }
+    ionViewWillEnter() {
+        this.cds = this.donneesService.CdList.slice();
+    }
 
     onToggleMenu() {
         this.menuCtrl.open();

@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { IonicStorageModule } from '@ionic/storage';
 
 import { DonneesService } from './../services/donneesService';
+import { AuthService } from './../services/authService';
 
 import { MyApp } from './app.component';
 import { SettingsPage } from './../pages/settings/settings';
@@ -48,6 +49,7 @@ import { AuthPage } from '../pages/auth/auth';
   ],
   providers: [
     DonneesService,
+    AuthService,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

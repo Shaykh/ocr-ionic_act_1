@@ -28,9 +28,9 @@ export class BookListPage implements OnInit, OnDestroy {
         this.donneesService.fetchBookList();
     }
 
-    // ionViewWillEnter() {
-    //     this.books = this.donneesService.bookList.slice();
-    // }
+    ionViewWillEnter() {
+        this.books = this.donneesService.bookList.slice();
+    }
 
     onToggleMenu() {
         this.menuCtrl.open();

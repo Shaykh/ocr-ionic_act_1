@@ -151,12 +151,27 @@ export class DonneesService {
 
     lendBook(book: Book, borrower: Borrower) {
         book.borrower = borrower;
+        book.isLent = true
+        this.saveBooksToLocalStorage();
+        this.emitBooks();
+    }
+
+    renderBook(book: Book) {
+        book.borrower = null;
+        book.isLent = false;
         this.saveBooksToLocalStorage();
         this.emitBooks();
     }
 
     lendCd(cd: Cd, borrower: Borrower) {
         cd.borrower = borrower;
+        this.saveCdsToLocalStorage();
+        this.emitCds();
+    }
+
+    renderCd(cd: Cd) {
+        cd.borrower = null;
+        cd.isLent = false;
         this.saveCdsToLocalStorage();
         this.emitCds();
     }

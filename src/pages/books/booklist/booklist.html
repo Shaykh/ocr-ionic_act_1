@@ -18,6 +18,7 @@
         [color]="book.isLent ? 'unavailable' : 'available-list'"
         (click)="onShowBook(i)">
         <ion-icon name="book"></ion-icon>
-        <b>{{ book.title }}</b> <br /> {{ book.author }}
+        <b>{{ book.title }}</b> <br />Auteur: {{ book.author }}
+        <p *ngIf="book.borrower">Prêté à {{ book.borrower.name }}</p>
     </button>
 </ion-content>
