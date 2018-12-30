@@ -1,7 +1,7 @@
-import { DonneesService } from './../../../services/donneesService';
-import { Book } from './../../../app/models/Book';
 import { Component, OnInit } from "@angular/core";
 import { NavParams, ViewController } from 'ionic-angular';
+import { Book } from './../../../app/models/Book';
+import { DonneesService } from './../../../services/donneesService';
 
 @Component({
     selector: 'page-lendbook',
@@ -28,5 +28,10 @@ export class LendBookPage implements OnInit {
 
     onToggleLend() {
         this.book.isLent = !this.book.isLent;
+    }
+
+    onSubmitForm() {
+        
+        this.onDismissModal();
     }
 }
