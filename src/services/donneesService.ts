@@ -151,12 +151,44 @@ export class DonneesService {
 
     lendBook(book: Book, borrower: Borrower) {
         book.borrower = borrower;
+        this.saveBooksToLocalStorage();
         this.emitBooks();
     }
 
     lendCd(cd: Cd, borrower: Borrower) {
         cd.borrower = borrower;
+        this.saveCdsToLocalStorage();
         this.emitCds();
+    }
+
+    saveBooksToLocalStorage() {
+        this.storage.set('books', this.bookList);
+    }
+
+    saveCdsToLocalStorage() {
+        this.storage.set('cds', this.CdList);
+    }
+
+    fetchBookList() {
+        this.storage.get('books').then(
+            (list) => {
+                if (list && list.length) {
+                    this.bookList = list.slice();
+                }
+                this.emitBooks();
+            }
+        );
+    }
+
+    fetchCdList() {
+        this.storage.get('cds').then(
+            (list) => {
+                if (list && list.length) {
+                    this.CdList = list.slice();
+                }
+                this.emitCds();
+            }
+        );
     }
 
     saveBooksToFirebase() {
