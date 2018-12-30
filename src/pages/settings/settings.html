@@ -12,5 +12,11 @@
 </ion-header>
 
 <ion-content padding>
-    <p>Menu Réglages de l'application</p>
+    <ion-card>
+        <ion-card-header>Données en ligne</ion-card-header>
+        <ion-card-content>
+            <button ion-button block outline (click)="onSaveList()">Sauvegarder</button>
+            <button ion-button block outline (click)="onFetchList()">Récupérer</button>
+        </ion-card-content>
+    </ion-card>
 </ion-content>
