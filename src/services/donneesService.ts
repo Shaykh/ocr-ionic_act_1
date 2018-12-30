@@ -1,3 +1,4 @@
+import { Storage } from '@ionic/storage';
 import { Subject } from 'rxjs/Subject';
 import * as firebase from 'firebase';
 import DataSnapshot = firebase.database.DataSnapshot;
@@ -9,6 +10,8 @@ export class DonneesService {
 
     books$ = new Subject<Book[]>();
     cds$ = new Subject<Cd[]>();
+
+    constructor(private storage: Storage) {}
 
     bookList: Book[] = [
         { 
