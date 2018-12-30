@@ -237,6 +237,7 @@ export class DonneesService {
             firebase.database().ref('books').once('value').then(
                 (data: DataSnapshot) => {
                     this.bookList = data.val();
+                    this.saveBooksToLocalStorage();
                     this.emitBooks();
                     resolve('Données des Livres récupérées avec succès!');
                 },
