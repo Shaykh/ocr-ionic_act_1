@@ -1,7 +1,6 @@
 import { MenuController, ToastController, LoadingController } from 'ionic-angular';
 import { Component } from "@angular/core";
 import { DonneesService } from './../../services/donneesService';
-import { BoundTextAst } from '@angular/compiler';
 
 @Component({
     selector: 'page-settings',
