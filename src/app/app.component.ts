@@ -28,11 +28,7 @@ export class MyApp {
       splashScreen.hide();
 
       let config = {
-        authDomain: "ionic-ocr-act.firebaseapp.com",
-        databaseURL: "https://ionic-ocr-act.firebaseio.com",
         projectId: "ionic-ocr-act",
-        storageBucket: "ionic-ocr-act.appspot.com",
-        messagingSenderId: "111622750946"
       };
       firebase.initializeApp(config);
 
