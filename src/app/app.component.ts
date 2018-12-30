@@ -28,7 +28,7 @@ export class MyApp {
       splashScreen.hide();
 
       let config = {
-        apiKey: "AIzaSyDDx39jKffuA46TkAikEnEMM7lutBU0MX8", //#gitignore
+        apiKey: "AIzaSyDDx39jKffuA46TkAikEnEMM7lutBU0MX8",  //#gitignore
         authDomain: "ionic-ocr-act.firebaseapp.com",
         databaseURL: "https://ionic-ocr-act.firebaseio.com",
         projectId: "ionic-ocr-act",
