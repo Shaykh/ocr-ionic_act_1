@@ -5,7 +5,9 @@ import DataSnapshot = firebase.database.DataSnapshot;
 import { Book } from './../app/models/Book';
 import { Cd } from './../app/models/Cd';
 import { Borrower } from './../app/models/Borrower';
+import { Injectable } from '@angular/core';
 
+@Injectable()
 export class DonneesService {
 
     books$ = new Subject<Book[]>();
@@ -165,6 +167,7 @@ export class DonneesService {
 
     lendCd(cd: Cd, borrower: Borrower) {
         cd.borrower = borrower;
+        cd.isLent = true;
         this.saveCdsToLocalStorage();
         this.emitCds();
     }
